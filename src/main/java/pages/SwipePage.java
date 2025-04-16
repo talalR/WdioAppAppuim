@@ -41,20 +41,12 @@ public class SwipePage extends BasePage {
         swipe(startX, centerY, endX, centerY, 500);
     }
 
-    public boolean isElementVisible(WebElement element) {
-        try {
-            return element.isDisplayed();
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    public WebElement findCarouselItem3(int timeoutSeconds) {
+    public void findCarouselItem3(int timeoutSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds));
         WebElement carouselItem3 = null;
         WebElement carouselItem4 = null;
 
-        while (carouselItem3 == null) {
+        while (true) {
             try {
                 carouselItem4 = driver.findElement(By.xpath("//android.view.ViewGroup[@resource-id=\"__CAROUSEL_ITEM_4_READY__\"]"));
                 wait.until(ExpectedConditions.visibilityOf(carouselItem4)); // Wait for item 4 to be visible
@@ -71,7 +63,6 @@ public class SwipePage extends BasePage {
             }
         }
 
-        return carouselItem3; // Return item 3 (even if null)
     }
 
     public void swipeUntilSupportVideosVisible(int timeoutSeconds) {

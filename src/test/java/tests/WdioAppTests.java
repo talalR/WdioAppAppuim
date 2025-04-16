@@ -29,10 +29,6 @@ public class WdioAppTests {
         homePage = new HomePage(); // Initializes the HomePage object
     }
 
-    @Test
-    public void testClass() throws InterruptedException {
-        // This test method is currently empty. It's a placeholder for potential future test logic.
-    }
 
     @Test(priority = 1)
     public void signUpTest() throws InterruptedException {
@@ -64,7 +60,7 @@ public class WdioAppTests {
     }
 
     @Test(priority = 3, dependsOnMethods = "loginTest")
-    public void formsTest() throws InterruptedException {
+    public void formsTest()  {
         homePage.clickFormsTab(); // Clicks the Forms tab on the HomePage
 
         // Section 1: Input Field
@@ -85,7 +81,7 @@ public class WdioAppTests {
         formsPage.openDropdown(); // Opens the dropdown
         List<String> items = formsPage.getDropDownItemsText(); // Gets all items from the dropdown
         Random random = new Random(); // Creates a Random object
-        int randomIndex = random.nextInt(items.size()); // Generates a random index within the size of the items list
+        int randomIndex = items.size() > 1 ? random.nextInt(items.size() - 1) + 1 : 0; // Generates a random index within the size of the items list but Greater than one to exclude Select an item option
 
         // Get the random item
         String randomItem = items.get(randomIndex); // Gets the item at the random index
