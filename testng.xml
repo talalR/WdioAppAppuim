@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/User/IdeaProjects/wdiodemotk">
-        <classes/>
+<suite name="WdioApp Test Suite">
+    <test name="WdioApp Tests">
+        <classes>
+            <class name="tests.WdioAppTests">
+                <methods>
+                    <include name="signUpTest"/>
+                    <include name="loginTest"/>
+                    <include name="formsTest"/>
+                    <include name="swipeTest"/>
+                </methods>
+            </class>
+        </classes>
     </test>
 </suite>
