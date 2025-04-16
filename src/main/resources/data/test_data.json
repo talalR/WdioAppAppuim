@@ -1,0 +1,30 @@
+{
+  "SignUpData": [
+    {
+      "TestCase": "SignUpValid",
+      "Email": "Talal.k1@Fodics.com",
+      "Password": "P@sswOrd123"
+    }
+  ],
+  "LoginData": [
+    {
+      "TestCase": "LoginValid",
+      "Username": "Talal.k2@Fodics.com",
+      "Password": "P@sswOrd123"
+    }
+  ],
+  "FormsData": [
+    {
+      "TestCase": "FormsData1",
+      "Some Text": "whatever it takes",
+      "switchNewStatus": "Click to turn the switch OFF",
+      "AlertDialogTitle": "This button is",
+      "AlertDialogMsg": "This button is active"
+    },
+    {
+      "TestCase": "FormsData2",
+      "Some Text": "Another Value",
+      "Mobile data": "OFF"
+    }
+  ]
+}
